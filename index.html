@@ -3,73 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6f4ee">
+<meta name="theme-color" content="#f5f7fb">
 <meta name="description" content="Portfolio of MD. Sabbir Hasan, a full-stack developer and Computer Science and Engineering student at AIUB.">
 <title>MD. Sabbir Hasan · Developer Portfolio</title>
 <style>
   :root {
-    color-scheme: light;
-    --paper:#f6f4ee; --ink:#192724; --muted:#50605a; --line:#d5d9cd;
-    --green:#164639; --lime:#d7f797; --white:#fffdf7;
-    --mono:ui-monospace, SFMono-Regular, Consolas, monospace;
+    color-scheme:light;
+    --ink:#142238; --muted:#48576d; --accent:#184aa2; --line:#dbe3ed;
+    --paper:#f5f7fb; --surface:#fff; --navy:#12233d;
   }
   * { box-sizing:border-box }
   html { scroll-behavior:smooth }
-  body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 system-ui,sans-serif }
-  a { color:inherit; text-underline-offset:.23em }
-  a:focus-visible { outline:3px solid #2c7557; outline-offset:5px }
-  .wrap { width:min(1110px, calc(100% - 3rem)); margin-inline:auto }
-  .skip { position:absolute; top:.5rem; left:.5rem; transform:translateY(-160%); padding:.5rem 1rem; background:white }
+  body { margin:0; color:var(--ink); background:var(--paper); font:1rem/1.65 system-ui,sans-serif }
+  a { color:inherit; text-underline-offset:.24em }
+  a:focus-visible { outline:3px solid #3a71d2; outline-offset:5px }
+  .wrap { width:min(1136px, calc(100% - 3rem)); margin-inline:auto }
+  .skip { position:absolute; left:1rem; top:1rem; transform:translateY(-200%); padding:.55rem .9rem; background:white; z-index:1 }
   .skip:focus { transform:none }
-  header { border-bottom:1px solid var(--line) }
-  nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 0; flex-wrap:wrap }
-  nav ul { display:flex; flex-wrap:wrap; gap:1.15rem; list-style:none; padding:0; margin:0 }
-  nav a { text-decoration:none; font-size:.9rem; font-weight:650 }
-  nav a:hover { text-decoration:underline }
-  .brand { display:flex; align-items:center; gap:.6rem }
-  .mark { display:grid; place-items:center; width:2rem; height:2rem; background:var(--green); color:white; font:700 .75rem var(--mono); border-radius:.3rem }
-  .hero { display:grid; grid-template-columns:1.35fr 1fr; align-items:center; gap:clamp(2rem,7vw,6rem); padding-block:clamp(4rem,10vw,8rem) }
-  .eyebrow { margin:0 0 .85rem; color:var(--green); font:700 .76rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.12em }
+  header { background:var(--surface); border-bottom:1px solid var(--line) }
+  nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding-block:1rem }
+  nav ul { display:flex; flex-wrap:wrap; gap:clamp(.8rem,3vw,2rem); list-style:none; margin:0; padding:0 }
+  nav a { font-size:.9rem; font-weight:650; text-decoration:none }
+  nav a:hover { color:var(--accent); text-decoration:underline }
+  .brand { display:flex; align-items:center; gap:.7rem }
+  .mark { display:grid; place-items:center; width:2.2rem; height:2.2rem; background:var(--navy); color:#fff; border-radius:.45rem; font-size:.78rem; letter-spacing:.06em }
+  .hero { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr); align-items:center; gap:clamp(2rem,7vw,6rem); padding-block:clamp(3rem,8vw,6.5rem) }
+  .eyebrow { margin:0 0 .85rem; color:var(--accent); font-size:.76rem; font-weight:750; text-transform:uppercase; letter-spacing:.12em }
   h1,h2,h3,p { margin-top:0 }
-  h1,h2 { font-family:Georgia,serif; font-weight:500; letter-spacing:-.045em }
-  h1 { font-size:clamp(3rem,7vw,6.6rem); line-height:.96; margin-bottom:1.4rem }
-  h2 { font-size:clamp(2.25rem,5vw,4rem); line-height:1; margin-bottom:1rem }
-  h3 { font-size:1.3rem; margin-bottom:.35rem }
-  .intro { max-width:35rem; color:var(--muted); font-size:1.13rem }
-  .actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.5rem }
-  .button { display:inline-block; padding:.65rem 1rem; border:1px solid var(--green); border-radius:.3rem; font-weight:650; text-decoration:none }
-  .primary { background:var(--green); color:white }
-  .button:hover { background:var(--lime); color:var(--ink) }
-  .panel { background:var(--green); color:var(--white); padding:clamp(1.3rem,4vw,2.35rem); border-radius:.6rem; box-shadow:10px 10px 0 #dce3d1 }
-  .portrait { display:block; width:9rem; height:9rem; object-fit:cover; border-radius:.45rem; border:2px solid var(--lime); margin-bottom:1.35rem }
-  .panel .eyebrow { color:var(--lime) }
-  .panel dl { margin:1.8rem 0 0 }
-  .panel dl div { padding:.8rem 0; border-top:1px solid #ffffff42 }
-  .panel dt { font:.76rem var(--mono); color:#d3e6d7; text-transform:uppercase; letter-spacing:.07em }
-  .panel dd { margin:.25rem 0 0; font-weight:600 }
-  .section { padding:clamp(3rem,7vw,5rem) 0; border-top:1px solid var(--line); scroll-margin-top:1rem }
+  h1,h2,h3 { letter-spacing:-.04em; line-height:1.07 }
+  h1 { font-size:clamp(2.75rem,6.4vw,5.4rem); margin-bottom:1rem }
+  h2 { font-size:clamp(2rem,4.7vw,3.45rem); margin-bottom:1rem }
+  h3 { font-size:1.4rem; margin-bottom:.6rem }
+  .intro { max-width:37rem; color:var(--muted); font-size:clamp(1.02rem,2vw,1.2rem) }
+  .actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.55rem }
+  .button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.65rem 1rem; border:1px solid #a5b8d5; border-radius:.45rem; font-weight:650; text-decoration:none }
+  .primary { background:var(--accent); border-color:var(--accent); color:#fff }
+  .button:hover { background:#e6efff; border-color:#7b9ad0; color:var(--navy) }
+  .portrait-frame { margin:0; width:min(100%, 25rem); justify-self:end; padding:.65rem; border:1px solid var(--line); border-radius:1.15rem; background:var(--surface); box-shadow:0 18px 42px #152d4d15 }
+  .portrait { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:.7rem }
+  .portrait-frame figcaption { display:flex; justify-content:space-between; gap:.35rem .8rem; flex-wrap:wrap; align-items:baseline; padding:.65rem .45rem .2rem; font-size:.83rem; color:var(--muted) }
+  .portrait-frame strong { color:var(--ink) }
+  .section { padding-block:clamp(2.7rem,6vw,5rem); border-top:1px solid var(--line); scroll-margin-top:1rem }
   .section p { color:var(--muted) }
+  .section .eyebrow { color:var(--accent) }
   .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:2rem }
-  article { display:flex; flex-direction:column; padding:clamp(1.15rem,3vw,1.75rem); border:1px solid var(--line); border-radius:.5rem; background:var(--white) }
-  .number { color:var(--green); font:700 .77rem var(--mono); margin-bottom:1.2rem }
-  article p { margin-bottom:1.1rem }
-  article .stack { font:.8rem/1.6 var(--mono); color:var(--green) }
-  article a { margin-top:auto; align-self:flex-start; font-weight:650 }
-  .skills { display:grid; grid-template-columns:1fr 1.4fr; gap:2rem }
-  .skills dl { margin:0 }
-  .skills dl div { display:grid; grid-template-columns:10rem 1fr; gap:.8rem; padding:.75rem 0; border-bottom:1px solid var(--line) }
-  .skills dt { font-weight:650 }
+  article { display:flex; flex-direction:column; padding:clamp(1.25rem,3vw,2rem); border:1px solid var(--line); border-radius:.8rem; background:var(--surface) }
+  .number { align-self:flex-start; display:grid; place-items:center; width:2.35rem; height:2.35rem; margin-bottom:1.2rem; border-radius:.55rem; background:#e9f0ff; color:var(--accent); font-size:.8rem; font-weight:750 }
+  article p { max-width:43ch; margin-bottom:1.15rem }
+  article .stack { color:var(--accent); font-size:.84rem; font-weight:650 }
+  article a { align-self:flex-start; margin-top:auto; font-size:.92rem; font-weight:700 }
+  article a:hover { color:var(--accent) }
+  .skills { display:grid; grid-template-columns:1fr 1.35fr; gap:clamp(1rem,4vw,3rem) }
+  .skills dl { margin:0; padding:0 1.25rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface) }
+  .skills dl div { display:grid; grid-template-columns:9rem 1fr; gap:.8rem; padding:1rem 0 }
+  .skills dl div + div { border-top:1px solid var(--line) }
+  .skills dt { font-weight:700 }
   .skills dd { margin:0; color:var(--muted) }
-  .contact { background:var(--lime); border-radius:.55rem; margin-bottom:3rem; padding:clamp(1.5rem,5vw,3.5rem) }
-  .contact p { max-width:35rem; margin-bottom:1.1rem }
-  footer { border-top:1px solid var(--line); padding:1rem 0 1.5rem; color:var(--muted); font-size:.85rem }
-  @media (max-width:720px) {
-    .hero,.skills { grid-template-columns:1fr }
-    .projects { grid-template-columns:1fr }
+  .contact { background:var(--navy); color:#fff; border-radius:.85rem; margin-bottom:3rem; padding:clamp(1.5rem,5vw,3.5rem) }
+  .contact .eyebrow { color:#adcbff }
+  .contact p { max-width:37rem; margin-bottom:1.1rem }
+  .contact .button { border-color:#94abd0 }
+  .contact .primary { background:#e7efff; color:var(--navy) }
+  .contact .button:hover { background:#fff; color:var(--navy) }
+  footer { border-top:1px solid var(--line); padding:1.2rem 0 1.6rem; color:var(--muted); font-size:.85rem }
+  @media (max-width:760px) {
+    .hero { grid-template-columns:minmax(0,1fr) minmax(0,.7fr); gap:1.4rem }
+    .skills { grid-template-columns:1fr }
   }
-  @media (max-width:430px) {
+  @media (max-width:560px) {
     .wrap { width:calc(100% - 2rem) }
-    .skills dl div { grid-template-columns:1fr; gap:.15rem }
+    .hero,.projects { grid-template-columns:1fr }
+    .portrait-frame { justify-self:start; width:min(100%,21rem) }
+    .skills dl div { grid-template-columns:1fr; gap:.2rem }
   }
   @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto } }
 </style>
@@ -87,22 +92,17 @@
     <div>
       <p class="eyebrow">Full-stack development · Dhaka, Bangladesh</p>
       <h1 id="name">MD. Sabbir Hasan</h1>
-      <p class="intro">I study Computer Science and Engineering at AIUB. I’m interested in how interfaces, APIs, and data fit together to solve practical problems.</p>
+      <p class="intro">I study Computer Science and Engineering at American International University-Bangladesh (AIUB). My interests span web applications, APIs, and data.</p>
       <div class="actions">
         <a class="button primary" href="#projects">Explore projects ↓</a>
         <a class="button" href="./Sabbir_Hasan_CV.pdf" download>Download CV ↓</a>
         <a class="button" href="https://github.com/sabbirhasan018">GitHub ↗</a>
       </div>
     </div>
-    <aside class="panel" aria-label="Education and interests">
-      <img class="portrait" src="./sabbir-hasan.jpg" width="144" height="144" alt="Portrait of MD. Sabbir Hasan">
-      <p class="eyebrow">At a glance</p>
-      <dl>
-        <div><dt>Studying</dt><dd>Computer Science &amp; Engineering</dd></div>
-        <div><dt>University</dt><dd>American International University-Bangladesh</dd></div>
-        <div><dt>Interests</dt><dd>Web applications, data, and software testing</dd></div>
-      </dl>
-    </aside>
+    <figure class="portrait-frame">
+      <img class="portrait" src="./sabbir-hasan.jpg" width="640" height="640" alt="Portrait of MD. Sabbir Hasan" fetchpriority="high">
+      <figcaption><strong>MD. Sabbir Hasan</strong><span>CSE student at AIUB</span></figcaption>
+    </figure>
   </section>
   <section id="projects" class="section" aria-labelledby="projects-title">
     <p class="eyebrow">01 / GitHub</p>
