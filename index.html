@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f4ee">
+<meta name="description" content="Portfolio of MD. Sabbir Hasan, a full-stack developer and Computer Science and Engineering student at AIUB.">
+<title>MD. Sabbir Hasan · Developer Portfolio</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper:#f6f4ee; --ink:#192724; --muted:#50605a; --line:#d5d9cd;
+    --green:#164639; --lime:#d7f797; --white:#fffdf7;
+    --mono:ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  * { box-sizing:border-box }
+  html { scroll-behavior:smooth }
+  body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 system-ui,sans-serif }
+  a { color:inherit; text-underline-offset:.23em }
+  a:focus-visible { outline:3px solid #2c7557; outline-offset:5px }
+  .wrap { width:min(1110px, calc(100% - 3rem)); margin-inline:auto }
+  .skip { position:absolute; top:.5rem; left:.5rem; transform:translateY(-160%); padding:.5rem 1rem; background:white }
+  .skip:focus { transform:none }
+  header { border-bottom:1px solid var(--line) }
+  nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1rem 0; flex-wrap:wrap }
+  nav ul { display:flex; flex-wrap:wrap; gap:1.15rem; list-style:none; padding:0; margin:0 }
+  nav a { text-decoration:none; font-size:.9rem; font-weight:650 }
+  nav a:hover { text-decoration:underline }
+  .brand { display:flex; align-items:center; gap:.6rem }
+  .mark { display:grid; place-items:center; width:2rem; height:2rem; background:var(--green); color:white; font:700 .75rem var(--mono); border-radius:.3rem }
+  .hero { display:grid; grid-template-columns:1.35fr 1fr; align-items:center; gap:clamp(2rem,7vw,6rem); padding-block:clamp(4rem,10vw,8rem) }
+  .eyebrow { margin:0 0 .85rem; color:var(--green); font:700 .76rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.12em }
+  h1,h2,h3,p { margin-top:0 }
+  h1,h2 { font-family:Georgia,serif; font-weight:500; letter-spacing:-.045em }
+  h1 { font-size:clamp(3rem,7vw,6.6rem); line-height:.96; margin-bottom:1.4rem }
+  h2 { font-size:clamp(2.25rem,5vw,4rem); line-height:1; margin-bottom:1rem }
+  h3 { font-size:1.3rem; margin-bottom:.35rem }
+  .intro { max-width:35rem; color:var(--muted); font-size:1.13rem }
+  .actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.5rem }
+  .button { display:inline-block; padding:.65rem 1rem; border:1px solid var(--green); border-radius:.3rem; font-weight:650; text-decoration:none }
+  .primary { background:var(--green); color:white }
+  .button:hover { background:var(--lime); color:var(--ink) }
+  .panel { background:var(--green); color:var(--white); padding:clamp(1.3rem,4vw,2.35rem); border-radius:.6rem; box-shadow:10px 10px 0 #dce3d1 }
+  .panel .eyebrow { color:var(--lime) }
+  .panel dl { margin:1.8rem 0 0 }
+  .panel dl div { padding:.8rem 0; border-top:1px solid #ffffff42 }
+  .panel dt { font:.76rem var(--mono); color:#d3e6d7; text-transform:uppercase; letter-spacing:.07em }
+  .panel dd { margin:.25rem 0 0; font-weight:600 }
+  .section { padding:clamp(3rem,7vw,5rem) 0; border-top:1px solid var(--line); scroll-margin-top:1rem }
+  .section p { color:var(--muted) }
+  .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:2rem }
+  article { display:flex; flex-direction:column; padding:clamp(1.15rem,3vw,1.75rem); border:1px solid var(--line); border-radius:.5rem; background:var(--white) }
+  .number { color:var(--green); font:700 .77rem var(--mono); margin-bottom:1.2rem }
+  article p { margin-bottom:1.1rem }
+  article .stack { font:.8rem/1.6 var(--mono); color:var(--green) }
+  article a { margin-top:auto; align-self:flex-start; font-weight:650 }
+  .skills { display:grid; grid-template-columns:1fr 1.4fr; gap:2rem }
+  .skills dl { margin:0 }
+  .skills dl div { display:grid; grid-template-columns:10rem 1fr; gap:.8rem; padding:.75rem 0; border-bottom:1px solid var(--line) }
+  .skills dt { font-weight:650 }
+  .skills dd { margin:0; color:var(--muted) }
+  .contact { background:var(--lime); border-radius:.55rem; margin-bottom:3rem; padding:clamp(1.5rem,5vw,3.5rem) }
+  .contact p { max-width:35rem; margin-bottom:1.1rem }
+  footer { border-top:1px solid var(--line); padding:1rem 0 1.5rem; color:var(--muted); font-size:.85rem }
+  @media (max-width:720px) {
+    .hero,.skills { grid-template-columns:1fr }
+    .projects { grid-template-columns:1fr }
+  }
+  @media (max-width:430px) {
+    .wrap { width:calc(100% - 2rem) }
+    .skills dl div { grid-template-columns:1fr; gap:.15rem }
+  }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav class="wrap" aria-label="Main navigation">
+    <a class="brand" href="#main"><span class="mark" aria-hidden="true">SH</span> Sabbir Hasan</a>
+    <ul><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav>
+</header>
+<main id="main" class="wrap">
+  <section class="hero" aria-labelledby="name">
+    <div>
+      <p class="eyebrow">Full-stack development · Dhaka, Bangladesh</p>
+      <h1 id="name">MD. Sabbir Hasan</h1>
+      <p class="intro">I study Computer Science and Engineering at AIUB. I’m interested in how interfaces, APIs, and data fit together to solve practical problems.</p>
+      <div class="actions">
+        <a class="button primary" href="#projects">Explore projects ↓</a>
+        <a class="button" href="https://github.com/sabbirhasan018">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="panel" aria-label="Education and interests">
+      <p class="eyebrow">At a glance</p>
+      <dl>
+        <div><dt>Studying</dt><dd>Computer Science &amp; Engineering</dd></div>
+        <div><dt>University</dt><dd>American International University-Bangladesh</dd></div>
+        <div><dt>Interests</dt><dd>Web applications, data, and software testing</dd></div>
+      </dl>
+    </aside>
+  </section>
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    <p class="eyebrow">01 / GitHub</p>
+    <h2 id="projects-title">Projects</h2>
+    <div class="projects">
+      <article>
+        <span class="number" aria-hidden="true">01</span>
+        <h3>LibraTrack</h3>
+        <p>A desktop library system for tracking books, student accounts, and loans. My changes added first-run account setup and checks for remembered sessions.</p>
+        <p class="stack">Java · Swing</p>
+        <a href="https://github.com/sabbirhasan018/Library-Management-System" aria-label="LibraTrack on GitHub">View repository ↗</a>
+      </article>
+      <article>
+        <span class="number" aria-hidden="true">02</span>
+        <h3>FirstPR</h3>
+        <p>Ranks open-source issues using evidence from public GitHub repositories. It summarizes setup and runs branch checks before a pull request.</p>
+        <p class="stack">TypeScript · Next.js · Supabase</p>
+        <a href="https://github.com/sabbirhasan018/FirstPR" aria-label="FirstPR on GitHub">View repository ↗</a>
+      </article>
+      <article>
+        <span class="number" aria-hidden="true">03</span>
+        <h3>IncidentLens</h3>
+        <p>Connects incident findings to logs, code, commits, and deployments. The investigation uses both vector and keyword search to retrieve evidence.</p>
+        <p class="stack">Python · FastAPI · LangGraph · Next.js</p>
+        <a href="https://github.com/sabbirhasan018/IncidentLens" aria-label="IncidentLens on GitHub">View repository ↗</a>
+      </article>
+      <article>
+        <span class="number" aria-hidden="true">04</span>
+        <h3>Countersign</h3>
+        <p>Checks invoices against purchase orders and delivery records. It flags duplicates and price discrepancies for human review.</p>
+        <p class="stack">Python · FastAPI · SQLAlchemy · Next.js</p>
+        <a href="https://github.com/sabbirhasan018/countersign" aria-label="Countersign on GitHub">View repository ↗</a>
+      </article>
+    </div>
+  </section>
+  <section id="skills" class="section skills" aria-labelledby="skills-title">
+    <div>
+      <p class="eyebrow">02 / Skills &amp; coursework</p>
+      <h2 id="skills-title">Tools &amp; technologies</h2>
+      <p>Tools used in the repositories above and subjects I’ve studied at AIUB.</p>
+    </div>
+    <dl>
+      <div><dt>Applications</dt><dd>Java, Swing, TypeScript, JavaScript, React, Next.js, CSS, Tailwind CSS</dd></div>
+      <div><dt>APIs &amp; data</dt><dd>Python, FastAPI, SQL, SQLAlchemy, Supabase</dd></div>
+      <div><dt>Search &amp; testing</dt><dd>LangChain, LangGraph, pytest, Vitest, Git, GitHub Actions</dd></div>
+      <div><dt>Coursework</dt><dd>Machine Learning, Computer Vision and Pattern Recognition, Data Science, Human Computer Interaction, Management Information Systems</dd></div>
+    </dl>
+  </section>
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <p class="eyebrow">03 / Contact</p>
+    <h2 id="contact-title">Let’s connect</h2>
+    <p>I’m interested in software development internships and collaborating on web projects.</p>
+    <div class="actions">
+      <a class="button primary" href="https://www.linkedin.com/in/sabbir-hasan-20b08544a/">Connect on LinkedIn ↗</a>
+      <a class="button" href="https://github.com/sabbirhasan018">Find me on GitHub ↗</a>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">MD. Sabbir Hasan · Dhaka, Bangladesh</div></footer>
+</body>
+</html>
